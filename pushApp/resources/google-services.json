@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1010741915440",
+    "firebase_url": "https://staxter-test.firebaseio.com",
+    "project_id": "staxter-test",
+    "storage_bucket": "staxter-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010741915440:android:bd302413ce015115",
+        "android_client_info": {
+          "package_name": "com.staxter.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010741915440-jpp6ojtfgh1539tm8uj18oaarf08ctpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUtmbf7qaH6WASdE8rZ1DWlK8D3GcI0Ig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010741915440-jpp6ojtfgh1539tm8uj18oaarf08ctpb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1010741915440-mhj341uqlotgump78a381v9jkcm4e06l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.staxter.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
