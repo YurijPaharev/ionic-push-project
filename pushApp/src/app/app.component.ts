@@ -44,9 +44,6 @@ export class AppComponent {
         alert: 'true',
         badge: true,
         sound: 'false'
-      },
-      browser: {
-        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
       }
     };
 
