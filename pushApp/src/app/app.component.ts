@@ -46,15 +46,28 @@ export class AppComponent {
         sound: 'false'
       }
     };
-
+    
     const pushObject: PushObject = this.push.init(options);
-
-
-    pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
-
-    pushObject.on('registration').subscribe((registration: any) => console.log('Device registered', registration));
-
-    pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
-
+    pushObject.on('registration').subscribe((registration: any) => {
+      console.log('__________Device registered: ID', registration.registrationId);
+      if (registration.registrationId) {
+        pushObject.unregister().then(result => {
+          console.log('__________Unregistered token__________', result);
+          const pushObjectNew: PushObject = this.push.init(options);
+          pushObjectNew.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
+          pushObjectNew.on('registration').subscribe((registrationNew: any) => {
+            console.log('__________Device registered: ID', registrationNew.registrationId);
+          });
+          pushObjectNew.on('error').subscribe(error => console.error('Error with Push plugin', error));
+        }).catch(() => {
+          const pushObjectNew: PushObject = this.push.init(options);
+          pushObjectNew.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
+          pushObjectNew.on('registration').subscribe((registrationNew: any) => {
+            console.log('__________Device registered: ID', registrationNew.registrationId);
+          });
+          pushObjectNew.on('error').subscribe(error => console.error('Error with Push plugin', error));
+        });
+      }
+    });
   }
 }
